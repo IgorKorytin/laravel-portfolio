@@ -4,6 +4,10 @@ use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+/**
+ * Class DatabaseSeeder
+ * @author IgorKorytin <ivkorytin@yandex.ru>
+ */
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -21,7 +25,8 @@ class DatabaseSeeder extends Seeder
 }
 
 /**
- * Class CompanyTableSeeder - создает три тестовые компании
+ * Class CompanyTableSeeder - создает три компании
+ * @author IgorKorytin <ivkorytin@yandex.ru>
  */
 class CompanyTableSeeder extends Seeder
 {
@@ -40,7 +45,8 @@ class CompanyTableSeeder extends Seeder
 }
 
 /**
- * Class DepartmentTableSeeder - создает для каждой компании от 5 до 15 подразделений
+ * Class DepartmentTableSeeder
+ * @author IgorKorytin <ivkorytin@yandex.ru>
  */
 class DepartmentTableSeeder extends Seeder
 {
@@ -65,6 +71,7 @@ class DepartmentTableSeeder extends Seeder
 
 /**
  * Class EmployeesTableSeeder - создает для каждого подразделения от 5 до 20 сотрудников
+ * @author IgorKorytin <ivkorytin@yandex.ru>
  */
 class EmployeesTableSeeder extends Seeder
 {
