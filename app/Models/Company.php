@@ -24,6 +24,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Company extends Model
 {
+    /**
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * Собираем информацию для просмотра компании.
@@ -57,11 +61,11 @@ class Company extends Model
         $departs = Department::getAllByCompany($company_id);
         $count = 0;
         if ($departs) {
-            foreach ($departs['depart'] as $key => $depart) {
-                $count += Employee::getDepartCount($depart->id);
+            foreach ($departs as $key => $depart) {
+                $department = (array)$depart['depart'];
+                $count += Employee::getDepartCount($department['id']);
             }
         }
-
         return $count;
     }
 
@@ -72,11 +76,10 @@ class Company extends Model
      */
     public static function allWithCounts()
     {
-        $data = [];
         $companies = self::all();
         if ($companies) {
             foreach ($companies as $company) {
-                $data = [
+                $data [] = [
                     'company' => $company,
                     'departs_count' => Department::getCompaniesDepartCount($company->id),
                     'users_count' => Company::getAllUsersCount($company->id)

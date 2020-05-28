@@ -17,6 +17,7 @@ use Illuminate\Http\Response;
 class CompanyController
 {
 
+
     /**
      * Список компаний для отрисовки главной страницы, помимо данных из таблиц, отобраэаем количество подразделений и сотрудников (общее)
      * @return JsonResponse

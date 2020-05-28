@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 7.13.0 on 2020-05-27 23:52:36.
+ * Generated for Laravel 7.13.0 on 2020-05-28 08:47:49.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -13,6 +13,7 @@
 
 namespace Illuminate\Support\Facades {
 
+    use;
     use App\Console\Kernel;
     use App\User;
     use BadMethodCallException;
@@ -27,6 +28,7 @@ namespace Illuminate\Support\Facades {
     use Generator;
     use GuzzleHttp\Promise\PromiseInterface;
     use Illuminate\Auth\Access\AuthorizationException;
+    use Illuminate\Auth\Access\iterable;
     use Illuminate\Auth\AuthenticationException;
     use Illuminate\Auth\AuthManager;
     use Illuminate\Auth\Passwords\PasswordBrokerManager;
@@ -126,7 +128,6 @@ namespace Illuminate\Support\Facades {
     use PDO;
     use PDOStatement;
     use Psr\Log\LoggerInterface;
-    use Psr\SimpleCache\iterable;
     use ReflectionException;
     use RuntimeException;
     use SessionHandlerInterface;
@@ -1555,7 +1556,7 @@ namespace Illuminate\Support\Facades {
         public static function getInstance()
         {
             //Method inherited from \Illuminate\Container\Container
-            return \Illuminate\Foundation\Application::getInstance();
+                        return \Illuminate\Foundation\Application::getInstance();
         }
 
         /**
@@ -1568,7 +1569,7 @@ namespace Illuminate\Support\Facades {
         public static function setInstance($container = null)
         {
             //Method inherited from \Illuminate\Container\Container
-            return \Illuminate\Foundation\Application::setInstance($container);
+                        return \Illuminate\Foundation\Application::setInstance($container);
         }
 
         /**
@@ -2410,7 +2411,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function macro($name, $macro)
         {
-            SessionGuard::macro($name, $macro);
+                        SessionGuard::macro($name, $macro);
         }
 
         /**
@@ -2424,7 +2425,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function mixin($mixin, $replace = true)
         {
-            SessionGuard::mixin($mixin, $replace);
+                        SessionGuard::mixin($mixin, $replace);
         }
 
         /**
@@ -2436,7 +2437,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasMacro($name)
         {
-            return SessionGuard::hasMacro($name);
+                        return SessionGuard::hasMacro($name);
         }
 
     }
@@ -2775,7 +2776,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function newComponentHash($component)
         {
-            return BladeCompiler::newComponentHash($component);
+                        return BladeCompiler::newComponentHash($component);
         }
 
         /**
@@ -2790,7 +2791,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function compileClassComponentOpening($component, $alias, $data, $hash)
         {
-            return BladeCompiler::compileClassComponentOpening($component, $alias, $data, $hash);
+                        return BladeCompiler::compileClassComponentOpening($component, $alias, $data, $hash);
         }
 
         /**
@@ -2814,7 +2815,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function sanitizeComponentAttribute($value)
         {
-            return BladeCompiler::sanitizeComponentAttribute($value);
+                        return BladeCompiler::sanitizeComponentAttribute($value);
         }
 
         /**
@@ -3387,9 +3388,9 @@ namespace Illuminate\Support\Facades {
         /**
          * Obtains multiple cache items by their unique keys.
          *
-         * @param iterable $keys A list of keys that can obtained in a single operation.
+         * @param \Psr\SimpleCache\iterable $keys A list of keys that can obtained in a single operation.
          * @param mixed $default Default value to return for keys that do not exist.
-         * @return iterable A list of key => value pairs. Cache keys that do not exist or are stale will have $default as value.
+         * @return \Psr\SimpleCache\iterable A list of key => value pairs. Cache keys that do not exist or are stale will have $default as value.
          * @throws \Psr\SimpleCache\InvalidArgumentException
          *   MUST be thrown if $keys is neither an array nor a Traversable,
          *   or if any of the $keys are not a legal value.
@@ -3466,7 +3467,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Persists a set of key => value pairs in the cache, with an optional TTL.
          *
-         * @param iterable $values A list of key => value pairs for a multiple-set operation.
+         * @param \Psr\SimpleCache\iterable $values A list of key => value pairs for a multiple-set operation.
          * @param null|int|DateInterval $ttl Optional. The TTL value of this item. If no value is sent and
          *                                       the driver supports TTL then the library may set a default value
          *                                       for it or let the driver take care of that.
@@ -3613,7 +3614,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Deletes multiple cache items in a single operation.
          *
-         * @param iterable $keys A list of string-based keys to be deleted.
+         * @param \Psr\SimpleCache\iterable $keys A list of string-based keys to be deleted.
          * @return bool True if the items were successfully removed. False if there was an error.
          * @throws \Psr\SimpleCache\InvalidArgumentException
          *   MUST be thrown if $keys is neither an array nor a Traversable,
@@ -3777,7 +3778,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function macro($name, $macro)
         {
-            \Illuminate\Cache\Repository::macro($name, $macro);
+                        \Illuminate\Cache\Repository::macro($name, $macro);
         }
 
         /**
@@ -3791,7 +3792,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function mixin($mixin, $replace = true)
         {
-            \Illuminate\Cache\Repository::mixin($mixin, $replace);
+                        \Illuminate\Cache\Repository::mixin($mixin, $replace);
         }
 
         /**
@@ -3803,7 +3804,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasMacro($name)
         {
-            return \Illuminate\Cache\Repository::hasMacro($name);
+                        return \Illuminate\Cache\Repository::hasMacro($name);
         }
 
         /**
@@ -4203,7 +4204,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function macro($name, $macro)
         {
-            CookieJar::macro($name, $macro);
+                        CookieJar::macro($name, $macro);
         }
 
         /**
@@ -4217,7 +4218,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function mixin($mixin, $replace = true)
         {
-            CookieJar::mixin($mixin, $replace);
+                        CookieJar::mixin($mixin, $replace);
         }
 
         /**
@@ -4229,7 +4230,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasMacro($name)
         {
-            return CookieJar::hasMacro($name);
+                        return CookieJar::hasMacro($name);
         }
 
     }
@@ -4252,7 +4253,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function supported($key, $cipher)
         {
-            return Encrypter::supported($key, $cipher);
+                        return Encrypter::supported($key, $cipher);
         }
 
         /**
@@ -4264,7 +4265,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function generateKey($cipher)
         {
-            return Encrypter::generateKey($cipher);
+                        return Encrypter::generateKey($cipher);
         }
 
         /**
@@ -5286,7 +5287,7 @@ namespace Illuminate\Support\Facades {
         public static function resolverFor($driver, $callback)
         {
             //Method inherited from \Illuminate\Database\Connection
-            MySqlConnection::resolverFor($driver, $callback);
+                        MySqlConnection::resolverFor($driver, $callback);
         }
 
         /**
@@ -5299,7 +5300,7 @@ namespace Illuminate\Support\Facades {
         public static function getResolver($driver)
         {
             //Method inherited from \Illuminate\Database\Connection
-            return MySqlConnection::getResolver($driver);
+                        return MySqlConnection::getResolver($driver);
         }
 
         /**
@@ -5582,7 +5583,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function macro($name, $macro)
         {
-            \Illuminate\Events\Dispatcher::macro($name, $macro);
+                        \Illuminate\Events\Dispatcher::macro($name, $macro);
         }
 
         /**
@@ -5596,7 +5597,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function mixin($mixin, $replace = true)
         {
-            \Illuminate\Events\Dispatcher::mixin($mixin, $replace);
+                        \Illuminate\Events\Dispatcher::mixin($mixin, $replace);
         }
 
         /**
@@ -5608,7 +5609,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasMacro($name)
         {
-            return \Illuminate\Events\Dispatcher::hasMacro($name);
+                        return \Illuminate\Events\Dispatcher::hasMacro($name);
         }
 
         /**
@@ -6234,7 +6235,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function macro($name, $macro)
         {
-            Filesystem::macro($name, $macro);
+                        Filesystem::macro($name, $macro);
         }
 
         /**
@@ -6248,7 +6249,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function mixin($mixin, $replace = true)
         {
-            Filesystem::mixin($mixin, $replace);
+                        Filesystem::mixin($mixin, $replace);
         }
 
         /**
@@ -6260,7 +6261,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasMacro($name)
         {
-            return Filesystem::hasMacro($name);
+                        return Filesystem::hasMacro($name);
         }
 
     }
@@ -6752,7 +6753,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function response($body = null, $status = 200, $headers = [])
         {
-            return \Illuminate\Http\Client\Factory::response($body, $status, $headers);
+                        return \Illuminate\Http\Client\Factory::response($body, $status, $headers);
         }
 
         /**
@@ -6908,7 +6909,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function macro($name, $macro)
         {
-            \Illuminate\Http\Client\Factory::macro($name, $macro);
+                        \Illuminate\Http\Client\Factory::macro($name, $macro);
         }
 
         /**
@@ -6922,7 +6923,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function mixin($mixin, $replace = true)
         {
-            \Illuminate\Http\Client\Factory::mixin($mixin, $replace);
+                        \Illuminate\Http\Client\Factory::mixin($mixin, $replace);
         }
 
         /**
@@ -6934,7 +6935,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasMacro($name)
         {
-            return \Illuminate\Http\Client\Factory::hasMacro($name);
+                        return \Illuminate\Http\Client\Factory::hasMacro($name);
         }
 
         /**
@@ -7230,7 +7231,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function macro($name, $macro)
         {
-            \Illuminate\Translation\Translator::macro($name, $macro);
+                        \Illuminate\Translation\Translator::macro($name, $macro);
         }
 
         /**
@@ -7244,7 +7245,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function mixin($mixin, $replace = true)
         {
-            \Illuminate\Translation\Translator::mixin($mixin, $replace);
+                        \Illuminate\Translation\Translator::mixin($mixin, $replace);
         }
 
         /**
@@ -7256,7 +7257,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasMacro($name)
         {
-            return \Illuminate\Translation\Translator::hasMacro($name);
+                        return \Illuminate\Translation\Translator::hasMacro($name);
         }
 
     }
@@ -8087,7 +8088,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function macro($name, $macro)
         {
-            NotificationFake::macro($name, $macro);
+                        NotificationFake::macro($name, $macro);
         }
 
         /**
@@ -8101,7 +8102,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function mixin($mixin, $replace = true)
         {
-            NotificationFake::mixin($mixin, $replace);
+                        NotificationFake::mixin($mixin, $replace);
         }
 
         /**
@@ -8113,7 +8114,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasMacro($name)
         {
-            return NotificationFake::hasMacro($name);
+                        return NotificationFake::hasMacro($name);
         }
 
     }
@@ -8651,7 +8652,7 @@ namespace Illuminate\Support\Facades {
         public static function createPayloadUsing($callback)
         {
             //Method inherited from \Illuminate\Queue\Queue
-            SyncQueue::createPayloadUsing($callback);
+                        SyncQueue::createPayloadUsing($callback);
         }
 
         /**
@@ -8912,7 +8913,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function macro($name, $macro)
         {
-            Redirector::macro($name, $macro);
+                        Redirector::macro($name, $macro);
         }
 
         /**
@@ -8926,7 +8927,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function mixin($mixin, $replace = true)
         {
-            Redirector::mixin($mixin, $replace);
+                        Redirector::mixin($mixin, $replace);
         }
 
         /**
@@ -8938,7 +8939,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasMacro($name)
         {
-            return Redirector::hasMacro($name);
+                        return Redirector::hasMacro($name);
         }
 
     }
@@ -9275,7 +9276,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function createFrom($from, $to = null)
         {
-            return \Illuminate\Http\Request::createFrom($from, $to);
+                        return \Illuminate\Http\Request::createFrom($from, $to);
         }
 
         /**
@@ -9287,7 +9288,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function createFromBase($request)
         {
-            return \Illuminate\Http\Request::createFromBase($request);
+                        return \Illuminate\Http\Request::createFromBase($request);
         }
 
         /**
@@ -9557,7 +9558,7 @@ namespace Illuminate\Support\Facades {
         public static function createFromGlobals()
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request
-            return \Illuminate\Http\Request::createFromGlobals();
+                        return \Illuminate\Http\Request::createFromGlobals();
         }
 
         /**
@@ -9601,7 +9602,7 @@ namespace Illuminate\Support\Facades {
         public static function setFactory($callable)
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request
-            return \Illuminate\Http\Request::setFactory($callable);
+                        return \Illuminate\Http\Request::setFactory($callable);
         }
 
         /**
@@ -9632,7 +9633,7 @@ namespace Illuminate\Support\Facades {
         public static function setTrustedProxies($proxies, $trustedHeaderSet)
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request
-            return \Illuminate\Http\Request::setTrustedProxies($proxies, $trustedHeaderSet);
+                        return \Illuminate\Http\Request::setTrustedProxies($proxies, $trustedHeaderSet);
         }
 
         /**
@@ -9644,7 +9645,7 @@ namespace Illuminate\Support\Facades {
         public static function getTrustedProxies()
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request
-            return \Illuminate\Http\Request::getTrustedProxies();
+                        return \Illuminate\Http\Request::getTrustedProxies();
         }
 
         /**
@@ -9656,7 +9657,7 @@ namespace Illuminate\Support\Facades {
         public static function getTrustedHeaderSet()
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request
-            return \Illuminate\Http\Request::getTrustedHeaderSet();
+                        return \Illuminate\Http\Request::getTrustedHeaderSet();
         }
 
         /**
@@ -9670,7 +9671,7 @@ namespace Illuminate\Support\Facades {
         public static function setTrustedHosts($hostPatterns)
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request
-            return \Illuminate\Http\Request::setTrustedHosts($hostPatterns);
+                        return \Illuminate\Http\Request::setTrustedHosts($hostPatterns);
         }
 
         /**
@@ -9682,7 +9683,7 @@ namespace Illuminate\Support\Facades {
         public static function getTrustedHosts()
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request
-            return \Illuminate\Http\Request::getTrustedHosts();
+                        return \Illuminate\Http\Request::getTrustedHosts();
         }
 
         /**
@@ -9697,7 +9698,7 @@ namespace Illuminate\Support\Facades {
         public static function normalizeQueryString($qs)
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request
-            return \Illuminate\Http\Request::normalizeQueryString($qs);
+                        return \Illuminate\Http\Request::normalizeQueryString($qs);
         }
 
         /**
@@ -9716,7 +9717,7 @@ namespace Illuminate\Support\Facades {
         public static function enableHttpMethodParameterOverride()
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request
-            return \Illuminate\Http\Request::enableHttpMethodParameterOverride();
+                        return \Illuminate\Http\Request::enableHttpMethodParameterOverride();
         }
 
         /**
@@ -9728,7 +9729,7 @@ namespace Illuminate\Support\Facades {
         public static function getHttpMethodParameterOverride()
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request
-            return \Illuminate\Http\Request::getHttpMethodParameterOverride();
+                        return \Illuminate\Http\Request::getHttpMethodParameterOverride();
         }
 
         /**
@@ -10195,7 +10196,7 @@ namespace Illuminate\Support\Facades {
         public static function getMimeTypes($format)
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request
-            return \Illuminate\Http\Request::getMimeTypes($format);
+                        return \Illuminate\Http\Request::getMimeTypes($format);
         }
 
         /**
@@ -10233,9 +10234,9 @@ namespace Illuminate\Support\Facades {
          *  * _format request attribute
          *  * $default
          *
+         * @see getPreferredFormat
          * @return string|null The request format
          * @static
-         * @see getPreferredFormat
          */
         public static function getRequestFormat($default = 'html')
         {
@@ -10560,7 +10561,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function matchesType($actual, $type)
         {
-            return \Illuminate\Http\Request::matchesType($actual, $type);
+                        return \Illuminate\Http\Request::matchesType($actual, $type);
         }
 
         /**
@@ -11054,7 +11055,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function macro($name, $macro)
         {
-            \Illuminate\Http\Request::macro($name, $macro);
+                        \Illuminate\Http\Request::macro($name, $macro);
         }
 
         /**
@@ -11068,7 +11069,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function mixin($mixin, $replace = true)
         {
-            \Illuminate\Http\Request::mixin($mixin, $replace);
+                        \Illuminate\Http\Request::mixin($mixin, $replace);
         }
 
         /**
@@ -11080,7 +11081,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasMacro($name)
         {
-            return \Illuminate\Http\Request::hasMacro($name);
+                        return \Illuminate\Http\Request::hasMacro($name);
         }
 
         /**
@@ -11090,7 +11091,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function validate($rules, ...$params)
         {
-            return \Illuminate\Http\Request::validate($rules, ...$params);
+                        return \Illuminate\Http\Request::validate($rules, ...$params);
         }
 
         /**
@@ -11100,7 +11101,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function validateWithBag($errorBag, $rules, ...$params)
         {
-            return \Illuminate\Http\Request::validateWithBag($errorBag, $rules, ...$params);
+                        return \Illuminate\Http\Request::validateWithBag($errorBag, $rules, ...$params);
         }
 
         /**
@@ -11110,7 +11111,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasValidSignature($absolute = true)
         {
-            return \Illuminate\Http\Request::hasValidSignature($absolute);
+                        return \Illuminate\Http\Request::hasValidSignature($absolute);
         }
 
     }
@@ -11352,7 +11353,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function macro($name, $macro)
         {
-            ResponseFactory::macro($name, $macro);
+                        ResponseFactory::macro($name, $macro);
         }
 
         /**
@@ -11366,7 +11367,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function mixin($mixin, $replace = true)
         {
-            ResponseFactory::mixin($mixin, $replace);
+                        ResponseFactory::mixin($mixin, $replace);
         }
 
         /**
@@ -11378,7 +11379,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasMacro($name)
         {
-            return ResponseFactory::hasMacro($name);
+                        return ResponseFactory::hasMacro($name);
         }
 
     }
@@ -11772,7 +11773,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function toResponse($request, $response)
         {
-            return Router::toResponse($request, $response);
+                        return Router::toResponse($request, $response);
         }
 
         /**
@@ -12244,7 +12245,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function macro($name, $macro)
         {
-            Router::macro($name, $macro);
+                        Router::macro($name, $macro);
         }
 
         /**
@@ -12258,7 +12259,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function mixin($mixin, $replace = true)
         {
-            Router::mixin($mixin, $replace);
+                        Router::mixin($mixin, $replace);
         }
 
         /**
@@ -12270,7 +12271,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasMacro($name)
         {
-            return Router::hasMacro($name);
+                        return Router::hasMacro($name);
         }
 
         /**
@@ -12382,7 +12383,7 @@ namespace Illuminate\Support\Facades {
         public static function defaultStringLength($length)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder
-            MySqlBuilder::defaultStringLength($length);
+                        MySqlBuilder::defaultStringLength($length);
         }
 
         /**
@@ -14389,7 +14390,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function macro($name, $macro)
         {
-            UrlGenerator::macro($name, $macro);
+                        UrlGenerator::macro($name, $macro);
         }
 
         /**
@@ -14403,7 +14404,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function mixin($mixin, $replace = true)
         {
-            UrlGenerator::mixin($mixin, $replace);
+                        UrlGenerator::mixin($mixin, $replace);
         }
 
         /**
@@ -14415,7 +14416,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasMacro($name)
         {
-            return UrlGenerator::hasMacro($name);
+                        return UrlGenerator::hasMacro($name);
         }
 
     }
@@ -14976,7 +14977,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function macro($name, $macro)
         {
-            Factory::macro($name, $macro);
+                        Factory::macro($name, $macro);
         }
 
         /**
@@ -14990,7 +14991,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function mixin($mixin, $replace = true)
         {
-            Factory::mixin($mixin, $replace);
+                        Factory::mixin($mixin, $replace);
         }
 
         /**
@@ -15002,7 +15003,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function hasMacro($name)
         {
-            return Factory::hasMacro($name);
+                        return Factory::hasMacro($name);
         }
 
         /**
@@ -15228,7 +15229,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function parentPlaceholder($section = '')
         {
-            return Factory::parentPlaceholder($section);
+                        return Factory::parentPlaceholder($section);
         }
 
         /**
@@ -16916,7 +16917,7 @@ namespace {
         /**
          * Apply the scopes to the Eloquent builder instance and return it.
          *
-         * @return \Illuminate\Database\Eloquent\Builder
+         * @return static
          * @static
          */
         public static function applyScopes()
