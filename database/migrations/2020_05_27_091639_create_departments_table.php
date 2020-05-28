@@ -19,9 +19,10 @@ class CreateDepartmentsTable extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('company_id')->nullable(false);
-            $table->string('director');
-            $table->string('address');
+            $table->unsignedBigInteger('company_id')->nullable();
+            $table->string('name')->nullable();
+            $table->string('director')->nullable();
+            $table->string('address')->nullable();
             $table->index('company_id');
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('CASCADE');
         });

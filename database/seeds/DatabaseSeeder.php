@@ -1,6 +1,6 @@
 <?php
 
-use Faker\Factory;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -17,6 +17,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $faker = new Faker\Generator();
+        $faker->addProvider(new Faker\Provider\ru_RU\Person($faker));
+        $faker->addProvider(new Faker\Provider\ru_RU\Address($faker));
+        $faker->addProvider(new Faker\Provider\ru_RU\Company($faker));
         $this->call(CompanyTableSeeder::class);
         $this->call(DepartmentTableSeeder::class);
         $this->call(EmployeesTableSeeder::class);
@@ -33,11 +37,12 @@ class CompanyTableSeeder extends Seeder
 
     public function run()
     {
-
-        for ($i = 1; $i <= 3; $i++) {
+        $random_count = rand(10, 20);
+        $faker = Faker\Factory::create('ru_RU');
+        for ($i = 1; $i <= $random_count; $i++) {
             DB::table('companies')
                 ->insert([
-                    'name' => 'Компания ' . $i,
+                    'name' => $faker->company,
                 ]);
         }
     }
@@ -51,17 +56,24 @@ class CompanyTableSeeder extends Seeder
 class DepartmentTableSeeder extends Seeder
 {
 
+    /**
+     *
+     */
     public function run()
     {
-        $faker = Factory::create();
-        for ($i = 1; $i <= 3; $i++) {
+        $count = DB::table('companies')->count();
+        $faker = Faker\Factory::create('ru_RU');
+        for ($i = 1; $i <= $count; $i++) {
             $random_count = rand(5, 15);
+            $director = $faker->name;
+            $address = $faker->address;
             for ($j = 1; $j < $random_count; $j++) {
                 DB::table('departments')
                     ->insert([
                         'company_id' => $i,
-                        'director' => $faker->name,
-                        'address' => $faker->address
+                        'name' => $faker->company,
+                        'director' => $director,
+                        'address' => $address
                     ]);
             }
         }
@@ -79,7 +91,7 @@ class EmployeesTableSeeder extends Seeder
     public function run()
     {
         $departments_count = DB::table('departments')->count();
-        $faker = Factory::create();
+        $faker = Faker\Factory::create('ru_RU');
         for ($i = 1; $i <= $departments_count; $i++) {
             $random_count = rand(5, 20);
             for ($j = 1; $j < $random_count; $j++) {
@@ -87,10 +99,10 @@ class EmployeesTableSeeder extends Seeder
                     ->insert([
                         'department_id' => $i,
                         'name' => $faker->name,
-                        'role' => $i % 2 == 0 ? 'ИТР' : 'Сотрудник'
+                        'role' => $j % 2 == 0 ? 'ИТР' : 'Сотрудник'
                     ]);
             }
         }
     }
-
 }
+

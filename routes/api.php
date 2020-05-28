@@ -19,3 +19,8 @@
 
 Illuminate\Support\Facades\Route::get('company', 'CompanyController@index');
 Illuminate\Support\Facades\Route::get('company/{id}', 'CompanyController@show');
+Illuminate\Support\Facades\Route::post('company/delete/{id}', 'CompanyController@delete');
+Illuminate\Support\Facades\Route::post('depart/search-by-name', 'DepartController@searchByName');
+Illuminate\Support\Facades\Route::post('depart/create', 'DepartController@create');
+Illuminate\Support\Facades\Route::post('employee/update', 'EmployeeController@update');
+Illuminate\Support\Facades\Route::get('employee/get-depart', 'EmployeeController@getDepartEmployees');
